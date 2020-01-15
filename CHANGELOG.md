@@ -2,7 +2,7 @@
 # Changelog
 
 This document lists the changes (and individuals who contributed to those
-changes) for each release of python-vagrant.
+changes) for each release of pyvagrant.
 
 ## 0.5.15
 

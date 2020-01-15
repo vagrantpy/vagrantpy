@@ -1,6 +1,6 @@
 ## Introduction
 
-Python-vagrant is a python module that provides a _thin_ wrapper around the
+PyVagrant is a python module that provides a _thin_ wrapper around the
 `vagrant` command line executable, allowing programmatic control of Vagrant
 virtual machines (boxes).  This module is useful for:
 
@@ -18,7 +18,7 @@ virtual machines (boxes).  This module is useful for:
 
 This project began because I wanted python bindings for Vagrant so I could
 programmatically access my vagrant box using Fabric.  Drop me a line to let me
-know how you use python-vagrant.  I'd love to share more use cases.  -Todd DeLuca
+know how you use pyvagrant.  I'd love to share more use cases.  -Todd DeLuca
 
 
 ## Versioning and API Stability
@@ -26,7 +26,7 @@ know how you use python-vagrant.  I'd love to share more use cases.  -Todd DeLuc
 This package is _beta_ and its API is not guaranteed to be stable.  The API
 attempts to be congruent with the `vagrant` API terminology, to facilitate
 knowledge transfer for users already familiar with Vagrant.  Over time, the
-python-vagrant API has changed to better match the underling `vagrant` CLI and
+pyvagrant API has changed to better match the underling `vagrant` CLI and
 to evolve with the changes in that CLI.
 
 The package version numbering is in the form `0.X.Y`.  The initial `0` reflects
@@ -50,17 +50,17 @@ backwards-compatible features or bug fixes are added.
 
 ### Install from pypi.python.org
 
-Download and install python-vagrant:
+Download and install pyvagrant:
 
-    pip install python-vagrant
+    pip install pyvagrant
 
 ### Install from github.com
 
-Clone and install python-vagrant
+Clone and install pyvagrant
 
     cd ~
-    git clone git@github.com:todddeluca/python-vagrant.git
-    cd python-vagrant
+    git clone https://github.com/pyvagrant/pyvagrant.git
+    cd pyvagrant
     python setup.py install
 
 
@@ -147,7 +147,7 @@ For example, log the stdout and stderr of the subprocess to the file
 
 It's possible to communicate with the Vagrant subprocess using environment
 variables. The `Vagrantfile` could expect environment variables to be present
-and act accordingly. The environment variables can be set by `python-vagrant`.
+and act accordingly. The environment variables can be set by `pyvagrant`.
 
 ```python
 import vagrant
@@ -178,7 +178,7 @@ v.up()  # will pass env to the vagrant subprocess
 
 If you use python and vagrant and this project does not do what you want,
 please open an issue or a pull request on github at
-https://github.com/todddeluca/python-vagrant.
+https://github.com/pyvagrant/pyvagrant.
 
 Please see CHANGELOG.md for a detailed list of contributions and authors.
 
@@ -205,7 +205,7 @@ output is sent -- console or devnull:
 
     >>> import vagrant
     >>> import os
-    >>> vagrantfile = '/Users/tfd/proj/python-vagrant/tests/vagrantfiles/single_box'
+    >>> vagrantfile = '/Users/tfd/proj/pyvagrant/tests/vagrantfiles/single_box'
     >>> # Demonstrate a quiet Vagrant.  Equivalent to out_cm=vagrant.devnull_cm
     ... v1 = vagrant.Vagrant(vagrantfile)
     >>> v1.destroy() # output to /dev/null

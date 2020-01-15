@@ -7,7 +7,7 @@ The API attempts to conform closely to the API of the `vagrant` command line,
 including method names and parameter names.
 
 Documentation of usage, testing, installation, etc., can be found at
-https://github.com/todddeluca/python-vagrant.
+https://github.com/pyvagrant/pyvagrant.
 '''
 
 # std
@@ -736,7 +736,7 @@ class Vagrant(object):
             1424141572,,box-name,precise64
             1424141572,,box-provider,virtualbox
             1424141572,,box-version,0
-            1424141572,,box-name,python-vagrant-base
+            1424141572,,box-name,pyvagrant-base
             1424141572,,box-provider,virtualbox
             1424141572,,box-version,0
 

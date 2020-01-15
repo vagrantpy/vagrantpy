@@ -11,16 +11,18 @@ with open('vagrant/__init__.py') as fh:
             break
 
 setup(
-    name = 'python-vagrant',
+    name = 'pyvagrant',
     version = version,
     license = 'MIT',
     description = 'Python bindings for interacting with Vagrant virtual machines.',
     long_description = open(os.path.join(os.path.dirname(__file__),
                                          'README.md')).read(),
     keywords = 'python virtual machine box vagrant virtualbox vagrantfile',
-    url = 'https://github.com/todddeluca/python-vagrant',
+    url = 'https://github.com/pyvagrant/pyvagrant',
     author = 'Todd Francis DeLuca',
     author_email = 'todddeluca@yahoo.com',
+    maintainer = 'David McCheyne',
+    maintainer_email = 'davidmccheyne@gmail.com',
     classifiers = ['License :: OSI Approved :: MIT License',
                    'Development Status :: 4 - Beta',
                    'Programming Language :: Python :: 2',
