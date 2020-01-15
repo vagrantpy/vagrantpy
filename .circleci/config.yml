@@ -1,0 +1,23 @@
+version: 2
+jobs:
+  rpm:
+    docker:
+      - image: centos:8
+    steps:
+      - checkout
+      - run: 'dnf --assumeyes install rpmdevtools rpm-build dnf-plugins-core'
+      - run: 'dnf --assumeyes builddep packaging/python-pyvagrant.spec'
+      - run: 'rpmdev-setuptree'
+      - run: 'python3 setup.py sdist'
+      - run: 'cp packaging/python-pyvagrant.spec ~/rpmbuild/SPECS'
+      - run: 'cp dist/*.tar.gz ~/rpmbuild/SOURCES'
+      - run: 'cd ~/rpmbuild/SPECS; rpmbuild -ba python-pyvagrant.spec'
+      - run: 'mkdir -p /output; cp -a ~/rpmbuild/RPMS /output; cp -a ~/rpmbuild/SRPMS /output'
+      - store_artifacts:
+          path: '/output'
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - rpm
