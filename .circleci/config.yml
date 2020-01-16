@@ -1,5 +1,15 @@
 version: 2
 jobs:
+  python:
+    docker:
+      - image: centos:8
+    steps:
+      - checkout
+      - run: 'dnf --assumeyes install python3-devel python3-setuptools python3-wheel'
+      - run: 'python3 setup.py sdist bdist_wheel'
+      - run: 'mkdir -p /output; cp -a dist /output'
+      - store_artifacts:
+          path: '/output'
   rpm:
     docker:
       - image: centos:8
@@ -18,6 +28,7 @@ jobs:
 
 workflows:
   version: 2
-  test:
+  build:
     jobs:
+      - python
       - rpm
