@@ -11,14 +11,14 @@ with open('vagrant/__init__.py') as fh:
             break
 
 setup(
-    name = 'pyvagrant',
+    name = 'vagrantpy',
     version = version,
     license = 'MIT',
     description = 'Python bindings for interacting with Vagrant virtual machines.',
     long_description = open(os.path.join(os.path.dirname(__file__),
                                          'README.md')).read(),
     keywords = 'python virtual machine box vagrant virtualbox vagrantfile',
-    url = 'https://github.com/pyvagrant/pyvagrant',
+    url = 'https://github.com/vagrantpy/vagrantpy',
     author = 'Todd Francis DeLuca',
     author_email = 'todddeluca@yahoo.com',
     maintainer = 'David McCheyne',

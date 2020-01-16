@@ -4,7 +4,7 @@
 # Tests do not work without vagrant + virtualbox in the environment
 %bcond_with tests
 
-%global pypi_name pyvagrant
+%global pypi_name vagrantpy
 
 Name:           python-%{pypi_name}
 Version:        0.5.15
@@ -17,8 +17,8 @@ Group:          python
 %endif
 
 License:        MIT
-URL:            https://github.com/pyvagrant/pyvagrant
-Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+URL:            https://github.com/vagrantpy/vagrantpy
+Source0:        https://files.pythonhosted.org/packages/source/v/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 BuildArch:      noarch
 
 %if %{_vendor} == "debbuild"
@@ -38,7 +38,7 @@ BuildRequires:  virtualbox
 %endif
 
 %description
-PyVagrant is a python module that provides a _thin_ wrapper
+VagrantPy is a python module that provides a _thin_ wrapper
 around the vagrant command line executable, allowing programmatic control of
 Vagrant virtual machines (boxes).
 
@@ -51,7 +51,7 @@ Requires(post): python3-minimal
 %endif
 
 %description -n python3-%{pypi_name}
-PyVagrant is a python module that provides a _thin_ wrapper
+VagrantPy is a python module that provides a _thin_ wrapper
 around the vagrant command line executable, allowing programmatic control of
 Vagrant virtual machines (boxes).
 
@@ -76,7 +76,7 @@ nosetests --immediate --stop -vv --rednose
 %license LICENSE.txt
 %doc README.md
 %{python3_sitelib}/vagrant
-%{python3_sitelib}/pyvagrant-%{version}-*
+%{python3_sitelib}/vagrantpy-%{version}-*
 
 %if %{_vendor} == "debbuild"
 %preun -n python3-%{pypi_name}
