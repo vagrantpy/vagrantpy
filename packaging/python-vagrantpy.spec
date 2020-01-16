@@ -7,7 +7,7 @@
 %global pypi_name vagrantpy
 
 Name:           python-%{pypi_name}
-Version:        0.5.15
+Version:        0.6.0
 Release:        0%{?dist}
 Summary:        Python bindings for interacting with Vagrant virtual machines
 
